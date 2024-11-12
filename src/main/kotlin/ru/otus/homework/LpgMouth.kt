@@ -1,7 +1,9 @@
 package ru.otus.homework
 
-class LpgMouth(override val width: Int) :TankMouth() {
-    fun fuelLpg(liters: Int){}
+class LpgMouth(override var width: Int) :TankMouth() {
+    private fun fuelLpg(liters: Int){
+        this.width += liters
+    }
 
     override fun open() {
         println("Открываем крышку газобака")
@@ -10,4 +12,13 @@ class LpgMouth(override val width: Int) :TankMouth() {
     override fun close() {
         println("Закрываем крышку газозобака")
     }
+
+    override fun toFuel(liters: Int) {
+        fuelLpg(liters)
+    }
+
+    override fun toString(): String {
+        return "Газовое топливо"
+    }
+
 }

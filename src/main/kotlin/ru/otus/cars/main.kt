@@ -1,21 +1,43 @@
 package ru.otus.cars
 
+import ru.otus.homework.GasStation
+
 fun main() {
-    println("\n===> drive cars...")
-    driveCars()
-    println("\n===> inner test...")
-    innerNestedCheck()
-    println("\n===> garage make...")
-    garageMake()
-    println("\n===> model special...")
-    println("\n===> get equipment...")
-    getEquipment()
-    println("\n===> get color...")
-    getColor()
-    println("\n===> tech checks...")
-    techChecks()
-    println("\n===> Taz...")
-    println(Taz.color)
+
+    val listCars: List<Car> = listOf(
+        Vaz2107.build(Car.Plates("x777xx",77)),
+        Vaz2108.build(Car.Plates("в888вв",88)),
+        Taz
+    )
+
+    val station = GasStation()
+
+    println("На заправку заезжают:")
+    listCars.forEach{
+        println(it)
+        station.toFuelCar(it)
+    }
+
+    println("Все машины заправлены, теперь у них в баке: ")
+    listCars.forEach{ println(it) }
+
+
+
+//    println("\n===> drive cars...")
+//    driveCars()
+//    println("\n===> inner test...")
+//    innerNestedCheck()
+//    println("\n===> garage make...")
+//    garageMake()
+//    println("\n===> model special...")
+//    println("\n===> get equipment...")
+//    getEquipment()
+//    println("\n===> get color...")
+//    getColor()
+//    println("\n===> tech checks...")
+//    techChecks()
+//    println("\n===> Taz...")
+//    println(Taz.color)
 }
 
 fun driveCars() {

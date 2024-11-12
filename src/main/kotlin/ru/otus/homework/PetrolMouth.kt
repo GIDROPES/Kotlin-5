@@ -1,7 +1,9 @@
 package ru.otus.homework
 
-class PetrolMouth(override val width: Int): TankMouth() {
-    fun fuelPetrol(liters: Int){}
+class PetrolMouth(override var width: Int): TankMouth() {
+    private fun fuelPetrol(liters: Int){
+        this.width+=liters
+    }
 
     override fun open() {
         println("Открываем крышку бензобака")
@@ -11,4 +13,11 @@ class PetrolMouth(override val width: Int): TankMouth() {
         println("Закрываем крышку бензобака")
     }
 
+    override fun toFuel(liters: Int) {
+        fuelPetrol(liters)
+    }
+
+    override fun toString(): String {
+        return "Бензиновое топливо"
+    }
 }

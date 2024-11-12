@@ -7,6 +7,7 @@ abstract class TankMouth() {
     abstract fun open()
     abstract fun close()
 
+    abstract fun toFuel(liters:Int)
 
 
 }
